@@ -1,5 +1,5 @@
 #include <msp430.h>
-#include "libTimer.h"
+#include "timerLib/libTimer.h"
 #include "buzzer.h"
 
 void buzzer_init()
@@ -17,6 +17,17 @@ void buzzer_init()
     P2SEL |= BIT6;
     P2DIR = BIT6;		/* enable output to speaker (P2.6) */
 }
+///////////////////////
+void singHappyBirthday(){
+  int keys[11] = {220,220,277,0,220,0,293,311,0,0,200};
+  for(int i = 0;i<11;i++){
+    buzzer_set_period(keys[i]);
+    __ delay_cycles(4000000);
+  }
+    buzzer_set_period(0);
+  
+}  
+///////////////////////
 
 void buzzer_set_period(short cycles) /* buzzer clock = 2MHz.  (period of 1k results in 2kHz tone) */
 {

@@ -17,7 +17,7 @@ void buzzer_init()
     P2SEL |= BIT6;
     P2DIR = BIT6;		/* enable output to speaker (P2.6) */
 }
-///////////////////////
+//calls beat method if argument is one
 void songs(char tune){
   switch(tune){
   case 1:
@@ -25,9 +25,8 @@ void songs(char tune){
     break;
   }
 }
-///////////////////////
+//stores sequence of beats
 void beat(){
-  // int keys[11] = {220,220,277,0,220,0,293,311,0,0,200};
   int notes[32] = {220, 220, 277, 0, 220, 0, 293, 311, 0, 0, 220, 220, 277, 0, 220, 370, 293, 0, 0,   220, 220, 440, 415, 293, 311, 277, 392, 392, 415, 293, 370, 293 };
   for(int i = 0;i<32;i++){
     buzzer_set_period(notes[i]);
