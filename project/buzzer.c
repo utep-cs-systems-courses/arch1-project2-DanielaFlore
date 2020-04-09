@@ -27,7 +27,11 @@ void songs(char tune){
 }
 //stores sequence of beats
 void beat(){
+<<<<<<< HEAD
   int notes[10] = { 415, 293, 311, 277, 392, 392, 415, 293, 370, 293 };
+=======
+  int notes[10] = { 415, 293, 311, 277, 392, 392, 415, 293, 370, 293 };
+>>>>>>> e3ff364055419c08f41d47a0fd5ea24e9b847b92
   for(int i = 0;i<10;i++){
     buzzer_set_period(notes[i]);
     __delay_cycles(4000000);
